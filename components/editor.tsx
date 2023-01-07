@@ -2,17 +2,17 @@ import {
     Plate,
     createTrailingBlockPlugin,
     createNormalizeTypesPlugin,
-    createDndPlugin,
     createExitBreakPlugin,
     ELEMENT_H1,
     createResetNodePlugin,
     createNodeIdPlugin,
     createMentionPlugin,
     createEmojiPlugin,
-    MentionElement,
     MentionCombobox,
-    createComboboxPlugin
 } from "@udecode/plate";
+import {
+    createDndPlugin,
+} from '@udecode/plate-ui-dnd';
 
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
@@ -30,8 +30,8 @@ import { basicElementsPlugins } from "../plugins/basicElementsPlugins";
 import { resetBlockTypePlugin } from "../plugins/resetBlockTypePlugin";
 import { trailingBlockPlugin } from "../plugins/trailingBlockPlugin";
 import { TEXT_EDITOR_COMMANDS } from '../plugins/mentionables';
-import fonts from "../common/fonts";
 import { emojiPlugin } from "../plugins/emojiPlugin";
+import { MentionElement } from "./MentionElement";
 
 const initialValue = placeholderValue;
 
@@ -42,7 +42,6 @@ const plugins = createMyPlugins(
     [
         ...basicElementsPlugins,
         createNodeIdPlugin(),
-        createComboboxPlugin(),
         createMentionPlugin({
             key: '/',
             component: MentionElement,
@@ -65,7 +64,7 @@ const plugins = createMyPlugins(
 );
 
 const handleOnchange = (vals: EditorValue) => {
-    console.log({ vals: vals.slice(-1)[0].type });
+    // console.log({ vals: vals.slice(-1)[0].type });
 }
 
 export default function Editor() {
@@ -81,7 +80,6 @@ export default function Editor() {
                     root: {
                         overflow: "hidden",
                         borderRadius: '4px',
-                        fontFamily: fonts.base
                     }
                 }} items={[...TEXT_EDITOR_COMMANDS]} pluginKey="/" />
             </Plate>

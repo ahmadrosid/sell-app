@@ -17,9 +17,8 @@ import {
   ELEMENT_TABLE,
   ELEMENT_TODO_LI,
   ELEMENT_UL,
-  withDraggables,
 } from '@udecode/plate';
-import fonts from '../common/fonts';
+import { withDraggables } from '@udecode/plate-ui-dnd'
 
 const styles = {
   grabber: { fontSize: 12, } as React.CSSProperties,
@@ -34,7 +33,6 @@ const styles = {
     padding: ".25em",
     borderRadius: ".4em",
     textAlign: 'center',
-    fontFamily: fonts.base
   } as React.CSSProperties
 };
 

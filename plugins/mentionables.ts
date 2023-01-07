@@ -4,6 +4,7 @@ import { CheckBox } from '@styled-icons/material/CheckBox'
 import { Code } from '@styled-icons/material/Code'
 import { Link } from '@styled-icons/material/Link'
 import { AlternateEmail } from '@styled-icons/material/AlternateEmail'
+import { Title } from '@styled-icons/material/Title'
 import { StyledIcon } from '@styled-icons/styled-icon';
 
 type CommandItemProps = {
@@ -13,29 +14,33 @@ type CommandItemProps = {
 
 export const TEXT_EDITOR_COMMANDS: TComboboxItem<CommandItemProps>[] = [
     {
-      key: 'bullist',
-      text: 'Bulleted list',
-      data: { icon: FormatListBulleted, value: 'bullist' },
+        key: 'heading1',
+        text: 'Heading 1',
+        data: { icon: Title, value: 'heading1' },
     },
     {
-      key: 'mention',
-      text: 'Mention person',
-      data: { icon: AlternateEmail, value: 'mention' },
+        key: 'bullist',
+        text: 'Bulleted list',
+        data: { icon: FormatListBulleted, value: 'bullist' },
     },
     {
-      key: 'check',
-      text: 'Checklist',
-      data: { icon: CheckBox, value: 'check' },
+        key: 'mention',
+        text: 'Mention person',
+        data: { icon: AlternateEmail, value: 'mention' },
     },
     {
-      key: 'cod',
-      text: 'Code block',
-      data: { icon: Code, value: 'cod' },
+        key: 'check',
+        text: 'Checklist',
+        data: { icon: CheckBox, value: 'check' },
     },
     {
-      key: 'hyp',
-      text: 'Hyperlink',
-      data: { icon: Link, value: 'hyp' },
+        key: 'cod',
+        text: 'Code block',
+        data: { icon: Code, value: 'cod' },
     },
-  ];
-  
+    {
+        key: 'hyp',
+        text: 'Hyperlink',
+        data: { icon: Link, value: 'hyp' },
+    },
+];

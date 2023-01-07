@@ -7,7 +7,7 @@ const values = [
         type: 'h1',
         children: [
             {
-                text: '',
+                text: '🧱 Elements',
             },
         ],
     } as MyH1Element,
@@ -15,7 +15,7 @@ const values = [
         type: 'p',
         children: [
             {
-                text: '',
+                text: 'Next, let\'s create a new controller for our proxy to the PhotoRoom API. The reason we do this instead of calling the API directly from the frontend is because we want to secure the API key that we have.',
             },
         ],
     } as MyParagraphElement,

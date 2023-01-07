@@ -20,13 +20,14 @@ export const markTooltip: TippyProps = {
   hideOnClick: false,
   offset: [0, 17],
   placement: 'top',
+  className: 'font-base'
 };
 
 export const MarkBalloonToolbar = ({ children }: { children?: ReactNode }) => {
   const editor = useMyPlateEditorRef();
 
   const arrow = false;
-  const theme = 'light';
+  const theme = 'dark';
 
   const boldTooltip: TippyProps = { content: 'Bold (⌘+B)', ...markTooltip };
   const italicTooltip: TippyProps = { content: 'Italic (⌘+I)', ...markTooltip };

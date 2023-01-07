@@ -17,7 +17,7 @@ export const plateUI = createPlateUI({
         styles: {
             root: {
                 marginTop: '3px',
-                padding: '4px 0',
+                paddingTop: '3px'
             },
         },
         prefixClassNames: 'p',

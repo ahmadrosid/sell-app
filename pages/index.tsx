@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic'
-import fonts from '../common/fonts'
-const DynamicEditor = dynamic(() => import('../components/editor'), {
+const PlateEditor = dynamic(() => import('../components/editor'), {
   ssr: false,
 })
 
@@ -10,8 +9,7 @@ export default function Index() {
     margin: '0 auto',
     padding: '1em',
     height: '100vh',
-    fontFamily: fonts.base
   }}>
-    <DynamicEditor />
+    <PlateEditor />
   </div>
 }
