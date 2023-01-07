@@ -72,7 +72,7 @@ const handleOnchange = (vals: EditorValue) => {
     // console.log({ vals: vals.slice(-1)[0].type });
 }
 
-export const Editor = () => {
+const Editor = () => {
     return (
         <DndProvider backend={HTML5Backend}>
             <Plate<EditorValue>
@@ -94,3 +94,5 @@ export const Editor = () => {
         </DndProvider>
     );
 }
+
+export default Editor;

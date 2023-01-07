@@ -1,10 +1,9 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
-// const PlateEditor = dynamic(() => 
-//   import('../components/Editor').then((mod) => mod.Editor)
-// )
-const PlateEditor = dynamic(import('../components/Editor'))
+const PlateEditor = dynamic(() => import('../components/Editor'), {
+  ssr: false
+})
 
 
 export default function Index() {
