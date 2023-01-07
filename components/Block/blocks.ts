@@ -9,7 +9,7 @@ export const BLOCKS_EDITOR_COMMANDS: TComboboxItem<CommandItemProps>[] = [
     {
         key: 'h1',
         text: 'Heading 1',
-        data: { value: 'heading1' },
+        data: { value: 'Heading 1' },
     },
     {
         key: 'h2',
