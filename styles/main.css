@@ -1,0 +1,11 @@
+.drag-button {
+    border-color: transparent;
+    background-color: transparent;
+    border-radius: 4px;
+    padding: 2px 0px;
+    cursor: pointer;
+}
+
+.drag-button:hover {
+    background-color: rgba(55, 53, 47, 0.08);
+}
