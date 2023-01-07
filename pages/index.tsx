@@ -5,7 +5,7 @@ const PlateEditor = dynamic(() => import('../components/editor'), {
 
 export default function Index() {
   return <div style={{
-    width: 1024,
+    width: '75ch',
     margin: '0 auto',
     padding: '1em',
     height: '100vh',

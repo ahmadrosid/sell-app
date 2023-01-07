@@ -27,6 +27,7 @@ import { exitBreakPlugin } from "../plugins/exitBreakPlugin";
 import { withStyledPlaceHolders } from "./withStyledPlaceHolders";
 import { placeholderValue } from "../common/placeholderValue";
 import { basicElementsPlugins } from "../plugins/basicElementsPlugins";
+import { basicMarksPlugins } from "../plugins/basicMarksPlugins";
 import { resetBlockTypePlugin } from "../plugins/resetBlockTypePlugin";
 import { trailingBlockPlugin } from "../plugins/trailingBlockPlugin";
 import { TEXT_EDITOR_COMMANDS } from '../plugins/mentionables';
@@ -41,6 +42,7 @@ const components = withStyledDraggables(placeHolder);
 const plugins = createMyPlugins(
     [
         ...basicElementsPlugins,
+        ...basicMarksPlugins,
         createNodeIdPlugin(),
         createMentionPlugin({
             key: '/',

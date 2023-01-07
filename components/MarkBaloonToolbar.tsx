@@ -4,11 +4,11 @@ import { FormatItalic } from '@styled-icons/material/FormatItalic';
 import { FormatUnderlined } from '@styled-icons/material/FormatUnderlined';
 import { TippyProps } from '@tippyjs/react';
 import {
+  BalloonToolbar,
   getPluginType,
   MARK_BOLD,
   MARK_ITALIC,
   MARK_UNDERLINE,
-  BalloonToolbar,
   MarkToolbarButton,
 } from '@udecode/plate';
 import { useMyPlateEditorRef } from '../types/plateTypes';
@@ -20,7 +20,6 @@ export const markTooltip: TippyProps = {
   hideOnClick: false,
   offset: [0, 17],
   placement: 'top',
-  className: 'font-base'
 };
 
 export const MarkBalloonToolbar = ({ children }: { children?: ReactNode }) => {

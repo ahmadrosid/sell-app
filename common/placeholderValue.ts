@@ -15,7 +15,7 @@ const values = [
         type: 'p',
         children: [
             {
-                text: 'Next, let\'s create a new controller for our proxy to the PhotoRoom API. The reason we do this instead of calling the API directly from the frontend is because we want to secure the API key that we have.',
+                text: "The basic marks consist of text formatting such as bold, italic, underline, strikethrough, subscript, superscript, and code."
             },
         ],
     } as MyParagraphElement,
