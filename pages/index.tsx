@@ -1,8 +1,7 @@
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
-const PlateEditor = dynamic(() => import('../components/Editor'), {
+const PlateEditor = dynamic(() => import('../components/Editor.tsx'), {
   ssr: false,
-  suspense: false,
 })
 
 export default function Index() {
