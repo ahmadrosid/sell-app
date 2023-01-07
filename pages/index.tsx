@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic'
 import Head from 'next/head'
 const PlateEditor = dynamic(() => import('../components/Editor'), {
   ssr: false,
+  suspense: false,
 })
 
 export default function Index() {
