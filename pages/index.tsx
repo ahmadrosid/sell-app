@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
-const PlateEditor = dynamic(() => import('@components/Editor'), {
+const PlateEditor = dynamic(() => import('../components/Editor'), {
   ssr: false,
 })
 
