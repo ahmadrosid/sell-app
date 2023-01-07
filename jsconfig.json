@@ -2,9 +2,15 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@components/*": ["src/components/*"],
-            "@lib/*": ["src/lib/*"],
-            "@hooks/*": ["src/hooks/*"]
+            "@components/*": [
+                "components/*"
+            ],
+            "@plugins/*": [
+                "plugins/*"
+            ],
+            "@common/*": [
+                "common/*"
+            ],
         }
     }
 }
