@@ -8,8 +8,6 @@ import {
     createNodeIdPlugin,
     createMentionPlugin,
     createEmojiPlugin,
-    MentionCombobox,
-    MentionElement,
     AutoformatPlugin,
     createAutoformatPlugin
 } from "@udecode/plate";
