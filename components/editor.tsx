@@ -31,10 +31,10 @@ import { basicElementsPlugins } from "@plugins/basicElementsPlugins";
 import { basicMarksPlugins } from "@plugins/basicMarksPlugins";
 import { resetBlockTypePlugin } from "@plugins/resetBlockTypePlugin";
 import { trailingBlockPlugin } from "@plugins/trailingBlockPlugin";
-import { BLOCKS_EDITOR_COMMANDS } from '@plugins/blocks';
+import { BLOCKS_EDITOR_COMMANDS } from '@components/Block/blocks';
 import { emojiPlugin } from "@plugins/emojiPlugin";
 import { autoformatPlugin } from "@plugins/autoformatPlugin";
-import { BlockElement } from "@components/Block/BlockElement";
+import { BlockCombobox } from "./Block/BlockCombobox";
 
 const initialValue = placeholderValue;
 
@@ -48,7 +48,7 @@ const plugins = createMyPlugins(
         createNodeIdPlugin(),
         createMentionPlugin({
             key: '/',
-            component: BlockElement,
+            component: null,
             options: { trigger: '/' },
         }),
         createTrailingBlockPlugin(trailingBlockPlugin),
@@ -83,7 +83,7 @@ export default function Editor() {
                 onChange={handleOnchange}
                 initialValue={initialValue} >
                 <MarkBalloonToolbar />
-                <MentionCombobox
+                <BlockCombobox
                     styles={{
                         root: {
                             overflow: "hidden",
