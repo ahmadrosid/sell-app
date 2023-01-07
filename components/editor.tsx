@@ -9,30 +9,32 @@ import {
     createMentionPlugin,
     createEmojiPlugin,
     MentionCombobox,
+    MentionElement,
+    AutoformatPlugin,
+    createAutoformatPlugin
 } from "@udecode/plate";
-import {
-    createDndPlugin,
-} from '@udecode/plate-ui-dnd';
+import { createDndPlugin } from '@udecode/plate-ui-dnd';
 
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 
-import { EditorValue, createMyPlugins } from "../types/plateTypes";
-import { editorProps } from "../common/editableProps";
-import { plateUI } from '../common/plateUI';
+import { EditorValue, createMyPlugins, MyEditor } from "../types/plateTypes";
+import { plateUI } from '@common/plateUI';
+import { editorProps } from "@common/editableProps";
+import { placeholderValue } from "@common/placeholderValue";
 
-import { MarkBalloonToolbar } from "../components/MarkBaloonToolbar";
-import { withStyledDraggables } from "./withStyledDraggables";
-import { exitBreakPlugin } from "../plugins/exitBreakPlugin";
-import { withStyledPlaceHolders } from "./withStyledPlaceHolders";
-import { placeholderValue } from "../common/placeholderValue";
-import { basicElementsPlugins } from "../plugins/basicElementsPlugins";
-import { basicMarksPlugins } from "../plugins/basicMarksPlugins";
-import { resetBlockTypePlugin } from "../plugins/resetBlockTypePlugin";
-import { trailingBlockPlugin } from "../plugins/trailingBlockPlugin";
-import { TEXT_EDITOR_COMMANDS } from '../plugins/mentionables';
-import { emojiPlugin } from "../plugins/emojiPlugin";
-import { MentionElement } from "./MentionElement";
+import { MarkBalloonToolbar } from "@components/MarkBaloonToolbar";
+import { exitBreakPlugin } from "@plugins/exitBreakPlugin";
+import { withStyledDraggables } from "@components/withStyledDraggables";
+import { withStyledPlaceHolders } from "@components/withStyledPlaceHolders";
+import { basicElementsPlugins } from "@plugins/basicElementsPlugins";
+import { basicMarksPlugins } from "@plugins/basicMarksPlugins";
+import { resetBlockTypePlugin } from "@plugins/resetBlockTypePlugin";
+import { trailingBlockPlugin } from "@plugins/trailingBlockPlugin";
+import { BLOCKS_EDITOR_COMMANDS } from '@plugins/blocks';
+import { emojiPlugin } from "@plugins/emojiPlugin";
+import { autoformatPlugin } from "@plugins/autoformatPlugin";
+import { BlockElement } from "@components/Block/BlockElement";
 
 const initialValue = placeholderValue;
 
@@ -46,7 +48,7 @@ const plugins = createMyPlugins(
         createNodeIdPlugin(),
         createMentionPlugin({
             key: '/',
-            component: MentionElement,
+            component: BlockElement,
             options: { trigger: '/' },
         }),
         createTrailingBlockPlugin(trailingBlockPlugin),
@@ -59,6 +61,9 @@ const plugins = createMyPlugins(
         createEmojiPlugin(emojiPlugin),
         createDndPlugin({ options: { enableScroller: true } }),
         createExitBreakPlugin(exitBreakPlugin),
+        createAutoformatPlugin<AutoformatPlugin<EditorValue, MyEditor>, EditorValue>(
+            autoformatPlugin
+        ),
     ],
     {
         components,
@@ -78,12 +83,15 @@ export default function Editor() {
                 onChange={handleOnchange}
                 initialValue={initialValue} >
                 <MarkBalloonToolbar />
-                <MentionCombobox styles={{
-                    root: {
-                        overflow: "hidden",
-                        borderRadius: '4px',
-                    }
-                }} items={[...TEXT_EDITOR_COMMANDS]} pluginKey="/" />
+                <MentionCombobox
+                    styles={{
+                        root: {
+                            overflow: "hidden",
+                            borderRadius: '4px',
+                        }
+                    }}
+                    items={[...BLOCKS_EDITOR_COMMANDS]}
+                    pluginKey="/" />
             </Plate>
         </DndProvider>
     );

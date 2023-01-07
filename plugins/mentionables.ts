@@ -19,6 +19,11 @@ export const TEXT_EDITOR_COMMANDS: TComboboxItem<CommandItemProps>[] = [
         data: { icon: Title, value: 'heading1' },
     },
     {
+        key: 'heading2',
+        text: 'Heading 2',
+        data: { icon: Title, value: 'heading2' },
+    },
+    {
         key: 'bullist',
         text: 'Bulleted list',
         data: { icon: FormatListBulleted, value: 'bullist' },
